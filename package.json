@@ -2,7 +2,9 @@
 	"name": "replace-line-with-clipboard",
 	"displayName": "Replace Line With Clipboard",
 	"description": "Using a keyboard shortcut, replaces the current line with the contents of the clipboard",
-	"version": "0.0.1",
+	"publisher": "edag94",
+	"repository": "https://github.com/edag94/Replace-Lines-With-Clipboard-VSCodeExt",
+	"version": "0.0.2",
 	"engines": {
 		"vscode": "^1.33.0"
 	},
