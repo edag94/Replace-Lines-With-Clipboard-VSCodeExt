@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { TextDocument, Selection, TextLine, Range, } from "vscode";
+import { TextDocument, Selection, TextLine, Range, Position} from "vscode";
 
 export default (editor: vscode.TextEditor) => {
     let selections: Selection[] = editor.selections;
@@ -12,8 +12,18 @@ export default (editor: vscode.TextEditor) => {
                     const lineNumber : number = cursorSelection.active.line;
                     const line : TextLine = doc.lineAt(lineNumber);
                     const lineRange : Range = line.range;
-                    
-                    editBuilder.replace(lineRange, clipboard)
+                    //maintain tabbing
+                    const cursorPos : Position = cursorSelection.active;
+                    const cursorIdx : number = cursorPos.character;
+
+                    let space = "";
+                    for (let i = 0; i < cursorIdx; ++i){
+                        space += ' ';
+                    }
+
+                    const replacement : string = space + clipboard
+
+                    editBuilder.replace(lineRange, replacement)
                 }
             });
         })
