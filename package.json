@@ -4,9 +4,9 @@
 	"description": "Using a keyboard shortcut, replaces the current line with the contents of the clipboard",
 	"publisher": "edag94",
 	"repository": "https://github.com/edag94/Replace-Lines-With-Clipboard-VSCodeExt",
-	"version": "0.0.2",
+	"version": "0.0.4",
 	"engines": {
-		"vscode": "^1.33.0"
+		"vscode": "^1.13.0"
 	},
 	"categories": [
 		"Other"
