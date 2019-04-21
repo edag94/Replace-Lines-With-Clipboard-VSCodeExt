@@ -10,16 +10,24 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.helloWorld"
+		"onCommand:extension.ReplaceLineWithClipboard"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.helloWorld",
-				"title": "Hello World"
+				"command": "extension.ReplaceLineWithClipboard",
+				"title": "Replace Line With Clipboard"
 			}
-		]
+		],
+		"keybindings": [
+            {
+                "command": "extension.ReplaceLineWithClipboard",
+                "key": "ctrl+shift+v",
+                "mac": "cmd+shift+v",
+                "when": "editorTextFocus"
+            }
+        ]
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
