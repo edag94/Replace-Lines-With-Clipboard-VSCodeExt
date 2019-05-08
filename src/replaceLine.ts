@@ -16,12 +16,12 @@ export default (editor: vscode.TextEditor) => {
                     const cursorPos : Position = cursorSelection.active;
                     const cursorIdx : number = cursorPos.character;
 
-                    let space = "";
+                    let prev = "";
                     for (let i = 0; i < cursorIdx; ++i){
-                        space += ' ';
+                        prev += line.text[i];
                     }
 
-                    const replacement : string = space + clipboard
+                    const replacement : string = prev + clipboard
 
                     editBuilder.replace(lineRange, replacement)
                 }
